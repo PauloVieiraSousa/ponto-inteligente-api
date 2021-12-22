@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  mysql.pontointeligente:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pontointeligente123
+      MYSQL_USER: pontointeligente
+      MYSQL_PASSWORD: pontointeligente123
+      MYSQL_DATABASE: pontointeligente_db
+    volumes:
+      - mysql.pontointeligente.api:/var/lib/mysql
+    networks:
+      - pontointeligente
+networks:
+  pontointeligente:
+
+volumes:
+  mysql.pontointeligente.api:
